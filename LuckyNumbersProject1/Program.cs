@@ -35,6 +35,9 @@ namespace LuckyNumbersProject1
                     Console.WriteLine($"invalid must be between {minValue} and {maxValue}. Please enter again:");
                     answer[i] = int.Parse(Console.ReadLine());
                 }
+
+                
+
                 else
                 {
                     Console.Write($"{answer[0]},{answer[1]},{answer[2] },{answer[3]},{answer[4]},{answer[5]}");
@@ -42,6 +45,9 @@ namespace LuckyNumbersProject1
 
             }
 
+
+
+           
 
 
 
@@ -54,44 +60,66 @@ namespace LuckyNumbersProject1
                 winnings[a] = random.Next(0, winnings.Length - 1);
                 Console.WriteLine("Lucky Numbers :" + winnings[a]);
             }
-         //   bool result;
+            //   bool result;
             foreach (int number in answer)
             {
-                 count = 0;
+                count = 0;
                 foreach (int number2 in winnings)
                 {
                     if (number2 == number)
                     {
                         count++;
-
                         break;
-
-                      //  Console.WriteLine("\t\n " + number + " occurs " + count + " times");
                     }
-                 
-                  //   Console.WriteLine("\t\n " + number + " occurs " + count + " times");
-                    // int result= count 
+
+                   
+                   
+
                 }
+               
                 Console.WriteLine("\t\n " + number + " occurs " + count + " times");
-                //    Console.WriteLine(number == number2);
-                // result = true;
-                //  Console.WriteLine("number{0}",number==number2);
+                if (number == jackPot)
+                {
+                    Console.WriteLine("You won the jackpot");
+                }
 
             }
-           // Console.WriteLine("\t\n " + number + " occurs " + count + " times");
+            // Console.WriteLine("You still had a chance to win the jack pot number is 63 and worth 2000 dollars");
+
+
+
+
+            //if (number == jackPot)
+            //{
+            //    Console.WriteLine("You have won the JackPot");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You have not won the JackPot");
+            //}
+
+
             total = count * count;
-            Console.WriteLine($"Total Points earned:{total}");
+                Console.WriteLine($"Total Points earned:{total}");
+
+
+                
 
 
 
+
+
+
+
+
+
+
+            
+           
         }
 
     }
 }
 
 
-
-//    Console.WriteLine("\t\n " + answer + " occurs " + count + " times");
-//}
-//   Console.WriteLine(Array.IndexOf(answer, “October”));
 
