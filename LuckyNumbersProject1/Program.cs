@@ -73,15 +73,21 @@ namespace LuckyNumbersProject1
                         if (number == number2)
                         {
                             count++;
-                            
-                              break;
+                            //How many guessed correctly
+
+
+
+                         //   Console.WriteLine(number);
+                        //    answer.Intersect(winnings).Count();
+                             // break;
+
                         }
                     }
                    
 
                     Console.WriteLine("\t\n " + number + " occurs " + count + "times");
 
-                    sum = 0 + count+ i;
+                    sum = 0 + count++;
                     Console.WriteLine($"Total Points earned:{sum}");
 
                     if (number == jackPot)
@@ -89,7 +95,7 @@ namespace LuckyNumbersProject1
                         Console.WriteLine("You won the jackpot");
 
                     }
-
+                   
                 }
             } while (exit == false);
         }
