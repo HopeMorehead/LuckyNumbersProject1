@@ -15,6 +15,8 @@ namespace LuckyNumbersProject1
             int jackPot = 63;
             int i;
             int a;
+            int total;
+            int count = 0;
             //int Tempval = answer[i];
 
             Console.WriteLine("Pick a low start number.");
@@ -55,22 +57,33 @@ namespace LuckyNumbersProject1
          //   bool result;
             foreach (int number in answer)
             {
-                int count = 0;
+                 count = 0;
                 foreach (int number2 in winnings)
                 {
                     if (number2 == number)
                     {
-                        count = count + 1;
+                        count++;
 
-                        Console.WriteLine("\t\n " + number + " occurs " + count + " times");
+                        break;
+
+                      //  Console.WriteLine("\t\n " + number + " occurs " + count + " times");
                     }
+                 
+                  //   Console.WriteLine("\t\n " + number + " occurs " + count + " times");
+                    // int result= count 
                 }
+                Console.WriteLine("\t\n " + number + " occurs " + count + " times");
                 //    Console.WriteLine(number == number2);
                 // result = true;
                 //  Console.WriteLine("number{0}",number==number2);
 
             }
-            
+           // Console.WriteLine("\t\n " + number + " occurs " + count + " times");
+            total = count * count;
+            Console.WriteLine($"Total Points earned:{total}");
+
+
+
         }
 
     }
