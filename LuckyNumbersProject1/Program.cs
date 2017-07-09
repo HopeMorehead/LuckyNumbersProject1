@@ -11,14 +11,20 @@ namespace LuckyNumbersProject1
         static void Main(string[] args)
         {
 
+
+            int jackPot = 63;
+            int i;
+            int a;
+ //         int Tempval = answer[i];
+
             Console.WriteLine("Pick a low start number.");
             int minValue = int.Parse(Console.ReadLine());
             Console.WriteLine("Pick a high end number.");
             int maxValue = int.Parse(Console.ReadLine());
 
-            int[] answer = new int[6];
 
-            for (int i = 0; i < answer.Length; i++)
+            int[] answer = new int[6];
+            for ( i = 0; i < answer.Length; i++)
             {
                 Console.WriteLine($"Please enter answer 6 numbers");
                 answer[i] = int.Parse(Console.ReadLine());
@@ -27,60 +33,57 @@ namespace LuckyNumbersProject1
                     Console.WriteLine($"invalid must be between {minValue} and {maxValue}. Please enter again:");
                     answer[i] = int.Parse(Console.ReadLine());
                 }
-
                 else
                 {
-                    Console.WriteLine($"{answer[0]},{answer[1]},{answer[2] },{answer[3]},{answer[4]},{answer[5]}");
-
-
+                    Console.Write($"{answer[0]},{answer[1]},{answer[2] },{answer[3]},{answer[4]},{answer[5]}");
                 }
+
             }
-
-                Random random = new Random();
-                int[] winnings = new int[6];
-                for (int a = 0; a < winnings.Length; a++)
-                {
-                    winnings[a] = random.Next(0, winnings.Length - 1);
-                    Console.WriteLine("Lucky Numbers :" + winnings[a]);
-                }
-
-            foreach (var numberA in answer)
-            {
-                foreach (var numberB in winnings)
-                {
-                    if (numberA != numberB)
-                    {
-                        Console.WriteLine("You won");
-                    }
-                }
-            }
+  
 
 
 
-
-
-            /* if(answer[i] == winnings[a])
-         {
-             Console.WriteLine("Ya");
-         }*/
-
-            /*  Random random = new Random();
+            Console.Clear();
+            Random random = new Random();
             int[] winnings = new int[6];
-            for (int i = 0; i < winnings.Length; i++)
+
+            for (a = 0; a < winnings.Length; a++)
             {
-                winnings[i] = random.Next(0, winnings.Length - 1);
-                Console.WriteLine("Lucky Numbers :" winnings[i]);*/
-            //   }
+                winnings[a] = random.Next(0, winnings.Length - 1);
+                Console.WriteLine("Lucky Numbers :" + winnings[a]);
+            }
+
+            if (answer[i - 1] == winnings[a - 1]) 
+
+            {
+                Console.WriteLine("You won");
+            }
+           //  count1 = count1 + 1;
+//    Console.WriteLine("\t\n " + answer + " occurs " + count + " times");
+//}
+//   Console.WriteLine(Array.IndexOf(answer, “October”));
+
 
 
         }
 
-
     }
 }
-/*Lucky Number: 12
-Lucky Number: 47
-Lucky Number: 28
-Lucky Number: 3
-Lucky Number: 19
-Lucky Number: */
+
+
+/*   Console.WriteLine($"The JackPot numer is {jackPot}:");
+   if (i == jackPot)
+   {
+
+       Console.WriteLine("You have won some funds!");
+
+   }*/
+
+
+
+
+
+//  int Tempval2 = winnings[a];
+
+// 
+
