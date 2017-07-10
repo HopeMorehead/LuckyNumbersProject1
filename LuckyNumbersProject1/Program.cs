@@ -44,16 +44,12 @@ namespace LuckyNumbersProject1
 
                     else
                     {
+                        Console.Clear();
                         Console.Write($"{answer[0]},{answer[1]},{answer[2] },{answer[3]},{answer[4]},{answer[5]}");
+                       
                     }
 
                 }
-
-
-
-
-
-
 
                 Console.Clear();
                 Random random = new Random();
