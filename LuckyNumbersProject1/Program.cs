@@ -10,19 +10,16 @@ namespace LuckyNumbersProject1
     {
         static void Main(string[] args)
         {
-
             // Creating global variables to use in and outside of loops
             int jackPot = 63;
-            int jackPotAmount = 60000;
             int i;
             int a;
             int count;
             bool exit = false;
-            int sum;
             // Created totalPoints as a
             //Global variable. It's use isn't recognized due to
             //scope
-            int totalPoints;
+            int totalPoints = 0;
             int money;
             string userChoice;
             do
@@ -65,13 +62,13 @@ namespace LuckyNumbersProject1
                 int[] winnings = new int[6];
                 for (a = 0; a < winnings.Length; a++)
                 {
-                    winnings[a] = random.Next(minValue, maxValue);
-                 // winnings[a] = random.Next(0, winnings.Length - 1);
+                  //  winnings[a] = random.Next(minValue, maxValue);
+                     winnings[a] = random.Next(minValue, maxValue);
                     Console.WriteLine("Lucky Numbers :" + winnings[a]);
                 }
                 //Looping through both user and random numbers. Nested loop created in an attempt to find numbers
                 //of equal value and calculated the number of occurances.
-
+                count = 0;
                 foreach (int number in answer)
                 {
                     count = 0;
@@ -82,80 +79,80 @@ namespace LuckyNumbersProject1
                             count++;
                         }
                     }
-                    Console.WriteLine("\t\nYou guessed " + number + "  that number is a lucky Number " + count + " time");
+                }
+                Console.WriteLine("\t\nYou guessed correctly!" + count + " time(s)");
 
-                    // An attempt to capture the sum of  duplicates between the userinput and Random
-                    // and output total to the console.
-                    sum = 0 + count++;
-                    Console.WriteLine($"Total Points earned:{sum}");
+                // An attempt to capture the sum of  duplicates between the userinput and Random
+                // and output total to the console.
 
+                //Looping through the userinput and the jackpot number to find matches!
 
-                    Console.WriteLine("The JackPot number is 63!");
-                    if (number == jackPot)
+                for (int b = 0; b < answer.Length; b++)
+                    foreach (int variable in answer)
+
                     {
-                        money = jackPotAmount;
-                        Console.WriteLine($"63 isn't a lucky number but it is the jackpot number. You won the jackpot of {money}!");
+                        if (variable == jackPot)
+                        {
+                            //   totalPoints = 10 + count;
+                            totalPoints = 10;
+                            money = 10000;
 
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine("You didn't win the jackpot");
-                    }
+                if (totalPoints == 10)
+                {
+                    Console.WriteLine($"you won the jackpot amount of {10000}");
+
+                }
+                totalPoints = totalPoints + count;
+                Console.WriteLine($"Total Points earned:{totalPoints}");
 
 
+                //Another attempt to capture correct matches between user input and random numbers.
+
+                 if (totalPoints == 0)
+                {
+                    money = 0;
+                    Console.WriteLine($"You won {money} dollars");
+                }
+
+                else if (totalPoints == 1)
+                {
+                    money = 1000;
+                    Console.WriteLine($"You won {money} dollars");
+                }
+                else if (totalPoints == 2)
+                {
+                   
+                    money = 2000;
+                    Console.WriteLine($"You won {money} dollars");
 
 
-                    //Another attempt to capture correct matches between user input and random numbers.
+                }
+                else if (totalPoints == 3)
+                {
+                   
+                    money = 3000;
+                    Console.WriteLine($"You won {money} dollars");
 
-                    if (count++ ==0)
-                    {
-                        totalPoints =0;
-                        money = 1000 + jackPotAmount;
-                        Console.WriteLine("You won 0 dollars");
-                    }
+                }
+                else if (totalPoints == 4)
+                {
+                    money = 4000;
+                    Console.WriteLine($"You won {money} dollars");
 
-                    else if (count++ == 1)
-                    {
-                        totalPoints = 10;
-                        money = 1000+jackPotAmount;
-                        Console.WriteLine("You won 1000 dollars");
-                    }
-                    else if (count++ == 2)
-                    {
-                        totalPoints = 20;
-                        money = 2000;
-                        Console.WriteLine("You won 2000 dollars");
+                }
+                else if (totalPoints == 5)
+                {
+                    money = 5000;
+                    Console.WriteLine($"You won {money} dollars");
 
+                }
+                else if (totalPoints == 6)
+                {
+                    money = 6000;
+                    Console.WriteLine($"You won {money} dollars");
 
-                    }
-                    else if (count++ == 3)
-                    {
-                        totalPoints = 30;
-                        money = 3000;
-                        Console.WriteLine("You won 3000 dollars");
-
-                    }
-                    else if (count++ == 4)
-                    {
-                        totalPoints = 40;
-                        money = 4000;
-                        Console.WriteLine("You won 4000 dollars");
-
-                    }
-                    else if (count++ == 5)
-                    {
-                        totalPoints = 50;
-                        money = 5000;
-                        Console.WriteLine("You won 5000 dollars");
-
-                    }
-                    else if (count++ == 6)
-                    {
-                        totalPoints = 60;
-                        money = 6000;
-                        Console.WriteLine("You won 6000 dollars");
-
-                    }
                 }
 
 
@@ -164,14 +161,15 @@ namespace LuckyNumbersProject1
                 userChoice = Console.ReadLine().ToLower();
                 if (userChoice == "n")
                 {
-                  Console.WriteLine("\"Thanks for playing!\"");
-                  Environment.Exit(0);
+                    Console.WriteLine("\"Thanks for playing!\"");
+                    Environment.Exit(0);
                 }
-               else if (userChoice.ToLower() == "y")
+                else if (userChoice.ToLower() == "y")
                 {
-                      exit = false;
+                    exit = false;
                 }
             } while (exit == false);
+
         }
 
     }
